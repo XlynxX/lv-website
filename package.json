@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "build-only": "vite build",
     "type-check": "vue-tsc --build --force",
-    "publish": "npm run build && rm -rf docs; cp -r dist docs && sed -i -e 's/src=\\//src=/g' docs/index.html ; sed -i -e 's/href=\\//href=/g' docs/index.html"
+    "publish": "npm run build && git add dist -f && git commit -m '' && git subtree push --prefix dist origin gh-pages"
   },
   "dependencies": {
     "pinia": "^2.1.7",
